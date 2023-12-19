@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class Restart : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -17,12 +18,11 @@ public class Restart : MonoBehaviour
 
     }
 
-    // Update is called once per frame
 
 
     public void Reload()
     {
-    
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+       /// SceneManager.LoadScene(SceneManager.GetActiveScene().BuildIndex);
     }
 }
