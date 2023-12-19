@@ -19,6 +19,6 @@ public class Reload: MonoBehaviour
     }
     public void Restart()
     {
-      
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().BuildIndex);
     }
 }
