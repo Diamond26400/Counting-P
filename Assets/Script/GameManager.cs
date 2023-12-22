@@ -1,18 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool isGamePaused = false;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Check for input or events to trigger the different functionalities
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isGamePaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f; // Set time scale to normal (unpause)
+        isGamePaused = false;
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f; // Set time scale to 0 (pause)
+        isGamePaused = true;
+    }
+
+    public void QuitGame()
+    {
+        // This function should be called when the player wants to quit the game
+        Application.Quit();
+    }
+
+    public void LoadMainMenu()
+    {
+        // This function should be called when the player wants to go back to the main menu
+        Time.timeScale = 1f; // Ensure time scale is set to normal before loading main menu
+        SceneManager.LoadScene("MainMenu"); // Replace "MainMenu" with the name of your main menu scene
+    }
+
+    public void PlayGame()
+    {
+        // This function should be called when the player wants to start or resume the game
+        SceneManager.LoadScene("GameScene"); // Replace "GameScene" with the name of your game scene
     }
 }
