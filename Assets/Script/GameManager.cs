@@ -6,7 +6,16 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private bool isGamePaused = false;
-
+    private bool isGameActive = false;
+    [SerializeField] GameObject canvas1;
+    [SerializeField] GameObject canvas2;
+    [SerializeField] GameObject canvas3;
+    private void Start()
+    {
+        GameObject canvas1 = GameObject.Find("Canvas 1");
+        GameObject canvas2 = GameObject.Find("Canvas 2");
+        GameObject canvas3 = GameObject.Find("Canvas 3");
+    }
     void Update()
     {
         // Check for input or events to trigger the different functionalities
@@ -16,6 +25,7 @@ public class GameManager : MonoBehaviour
             if (isGamePaused)
             {
                 ResumeGame();
+                
             }
             else
             {
@@ -28,12 +38,14 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f; // Set time scale to normal (unpause)
         isGamePaused = false;
+        
     }
 
     public void PauseGame()
     {
         Time.timeScale = 0f; // Set time scale to 0 (pause)
         isGamePaused = true;
+
     }
 
     public void QuitGame()
