@@ -7,14 +7,21 @@ public class GameManager : MonoBehaviour
 {
     private bool isGamePaused = false;
     private bool isGameActive = false;
+
     [SerializeField] GameObject canvas1;
     [SerializeField] GameObject canvas2;
     [SerializeField] GameObject canvas3;
+
+    public string sceneToLoad = "Scene1";
+
+
     private void Start()
     {
         GameObject canvas1 = GameObject.Find("Canvas 1");
         GameObject canvas2 = GameObject.Find("Canvas 2");
         GameObject canvas3 = GameObject.Find("Canvas 3");
+
+        LoadScene();
     }
     void Update()
     {
@@ -25,7 +32,7 @@ public class GameManager : MonoBehaviour
             if (isGamePaused)
             {
                 ResumeGame();
-                
+
             }
             else
             {
@@ -33,12 +40,15 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
+    void LoadScene()
+    {
+        SceneManager.LoadScene(sceneToLoad);
+    }
     public void ResumeGame()
     {
         Time.timeScale = 1f; // Set time scale to normal (unpause)
         isGamePaused = false;
-        
+
     }
 
     public void PauseGame()
@@ -64,6 +74,6 @@ public class GameManager : MonoBehaviour
     public void PlayGame()
     {
         // This function should be called when the player wants to start or resume the game
-        SceneManager.LoadScene("GameScene"); // Replace "GameScene" with the name of your game scene
+        SceneManager.LoadScene("Scene"); // Replace "GameScene" with the name of your game scene
     }
 }

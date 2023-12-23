@@ -846,7 +846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &145979412
 Transform:
   m_ObjectHideFlags: 0
@@ -1193,6 +1193,7 @@ MonoBehaviour:
   canvas1: {fileID: 0}
   canvas2: {fileID: 0}
   canvas3: {fileID: 0}
+  sceneToLoad: Scene1
 --- !u!1 &326335759
 GameObject:
   m_ObjectHideFlags: 0
@@ -3071,6 +3072,7 @@ MonoBehaviour:
   canvas1: {fileID: 0}
   canvas2: {fileID: 0}
   canvas3: {fileID: 0}
+  sceneToLoad: Scene1
 --- !u!1 &624683936
 GameObject:
   m_ObjectHideFlags: 0
@@ -4351,6 +4353,7 @@ MonoBehaviour:
   canvas1: {fileID: 0}
   canvas2: {fileID: 0}
   canvas3: {fileID: 0}
+  sceneToLoad: Scene1
 --- !u!1 &974212388
 GameObject:
   m_ObjectHideFlags: 0
@@ -4697,6 +4700,7 @@ MonoBehaviour:
   canvas1: {fileID: 0}
   canvas2: {fileID: 0}
   canvas3: {fileID: 0}
+  sceneToLoad: Scene1
 --- !u!1 &1026177454
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,6 +5205,7 @@ MonoBehaviour:
   canvas1: {fileID: 0}
   canvas2: {fileID: 0}
   canvas3: {fileID: 0}
+  sceneToLoad: Scene1
 --- !u!1 &1086810175
 GameObject:
   m_ObjectHideFlags: 0
