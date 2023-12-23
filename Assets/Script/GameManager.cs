@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
                 isGamePaused = false;
                 canvas2.SetActive(false);
                 ResumeGame();
-
+                Debug.Log("pause");
             }
             else
             {
