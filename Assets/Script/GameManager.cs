@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f; // Set time scale to normal (unpause)
         isGamePaused = false;
-        canvas2.SetActive(false);
+ 
     }
 
     public void PauseGame()
