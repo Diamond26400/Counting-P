@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private bool isGamePaused = false;
-    private bool isGameActive = false;
 
-    [SerializeField] GameObject canvas1;
+
+   
     [SerializeField] GameObject canvas2;
     [SerializeField] GameObject canvas3;
 
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        GameObject canvas1 = GameObject.Find("Canvas 1");
+       // GameObject canvas1 = GameObject.Find("Canvas 1");
         GameObject canvas2 = GameObject.Find("Canvas 2");
         GameObject canvas3 = GameObject.Find("Canvas 3");
 
@@ -31,13 +31,19 @@ public class GameManager : MonoBehaviour
         {
             if (isGamePaused)
             {
+                isGamePaused = true;
+                canvas2.SetActive(true);
                 PauseGame();
-
+              
+                
+                
             }
             else
             {
-               
+                isGamePaused = false;
+                canvas2.SetActive(false);
                 ResumeGame();
+                
             }
         }
     }
@@ -47,14 +53,14 @@ public class GameManager : MonoBehaviour
     }
     public void ResumeGame()
     {
-        Time.timeScale = 1f; // Set time scale to normal (unpause)
+        Time.timeScale = 0f; // Set time scale to normal (unpause)
         isGamePaused = false;
 
     }
 
     public void PauseGame()
     {
-        Time.timeScale = 0f; // Set time scale to 0 (pause)
+        Time.timeScale = 1f; // Set time scale to 0 (pause)
         isGamePaused = true;
 
     }
@@ -68,14 +74,17 @@ public class GameManager : MonoBehaviour
     public void LoadMainMenu()
     {
         // This function should be called when the player wants to go back to the main menu
-        Time.timeScale = 1f; // Ensure time scale is set to normal before loading main menu
-        SceneManager.LoadScene("MainMenu"); // Replace "MainMenu" with the name of your main menu scene
+         // Ensure time scale is set to normal before loading main menu
+        SceneManager.LoadScene("Scene"); // Replace "MainMenu" with the name of your main menu scene
+
     }
 
     public void PlayGame()
     {
         Debug.Log("game");
         // This function should be called when the player wants to start or resume the game
-        SceneManager.LoadScene("Scene"); // Replace "GameScene" with the name of your game scene
+        SceneManager.LoadScene("Scene");
+        canvas3.SetActive(true);
+
     }
 }

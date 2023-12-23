@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Counter/Scene.unity
-    guid: c237548c21a57894dae9921c31ea3055
-  - enabled: 1
     path: Assets/Scene1.unity
     guid: 511e53efc490a434abeddedbee486154
+  - enabled: 1
+    path: Assets/Counter/Scene.unity
+    guid: c237548c21a57894dae9921c31ea3055
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

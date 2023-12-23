@@ -1190,9 +1190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b6abaf77d3f104aac058bd19ec39dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas1: {fileID: 0}
-  canvas2: {fileID: 0}
-  canvas3: {fileID: 0}
+  canvas2: {fileID: 569711690}
+  canvas3: {fileID: 1737608662}
   sceneToLoad: Scene1
 --- !u!1 &326335759
 GameObject:
@@ -3069,9 +3068,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b6abaf77d3f104aac058bd19ec39dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas1: {fileID: 0}
-  canvas2: {fileID: 0}
-  canvas3: {fileID: 0}
+  canvas2: {fileID: 569711690}
+  canvas3: {fileID: 1737608662}
   sceneToLoad: Scene1
 --- !u!1 &624683936
 GameObject:
@@ -4350,9 +4348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b6abaf77d3f104aac058bd19ec39dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas1: {fileID: 0}
-  canvas2: {fileID: 0}
-  canvas3: {fileID: 0}
+  canvas2: {fileID: 569711690}
+  canvas3: {fileID: 1737608662}
   sceneToLoad: Scene1
 --- !u!1 &974212388
 GameObject:
@@ -4697,9 +4694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b6abaf77d3f104aac058bd19ec39dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas1: {fileID: 0}
-  canvas2: {fileID: 0}
-  canvas3: {fileID: 0}
+  canvas2: {fileID: 569711690}
+  canvas3: {fileID: 1737608662}
   sceneToLoad: Scene1
 --- !u!1 &1026177454
 GameObject:
@@ -5202,9 +5198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b6abaf77d3f104aac058bd19ec39dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas1: {fileID: 0}
-  canvas2: {fileID: 0}
-  canvas3: {fileID: 0}
+  canvas2: {fileID: 569711690}
+  canvas3: {fileID: 1737608662}
   sceneToLoad: Scene1
 --- !u!1 &1086810175
 GameObject:
@@ -7138,7 +7133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b6abaf77d3f104aac058bd19ec39dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas1: {fileID: 1899638121}
   canvas2: {fileID: 569711690}
   canvas3: {fileID: 1737608662}
   sceneToLoad: Scene1
@@ -8216,7 +8210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1737608663
 MonoBehaviour:
   m_ObjectHideFlags: 0
