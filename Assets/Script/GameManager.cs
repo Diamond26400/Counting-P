@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         GameObject canvas2 = GameObject.Find("Canvas 2");
         GameObject canvas3 = GameObject.Find("Canvas 3");
 
-        LoadScene();
+        //LoadScene();
     }
     void Update()
     {
@@ -31,12 +31,13 @@ public class GameManager : MonoBehaviour
         {
             if (isGamePaused)
             {
-                ResumeGame();
+                PauseGame();
 
             }
             else
             {
-                PauseGame();
+               
+                ResumeGame();
             }
         }
     }
@@ -73,6 +74,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayGame()
     {
+        Debug.Log("game");
         // This function should be called when the player wants to start or resume the game
         SceneManager.LoadScene("Scene"); // Replace "GameScene" with the name of your game scene
     }
