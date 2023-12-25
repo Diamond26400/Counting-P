@@ -33,14 +33,14 @@ public class GameManager : MonoBehaviour
                 isGamePaused = false;
                 canvas2.SetActive(false);
                 ResumeGame();
-                Debug.Log("pause");
+                Debug.Log("Resume");
             }
             else
             {
                 isGamePaused = true;
                 canvas2.SetActive(true);
                 PauseGame();
-
+                Debug.Log("pause");
             }
         }
     }
@@ -49,7 +49,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f; // Set time scale to normal (unpause)
         isGamePaused = false;
- 
+        SceneManager.LoadScene("Scene");
+
     }
 
     public void PauseGame()
@@ -69,7 +70,7 @@ public class GameManager : MonoBehaviour
     {
         // This function should be called when the player wants to go back to the main menu
         // Ensure time scale is set to normal before loading main menu
-        SceneManager.LoadScene("Scene"); // Replace "MainMenu" with the name of your main menu scene
+        SceneManager.LoadScene("Scene1"); // Replace "MainMenu" with the name of your main menu scene
 
     }
 
