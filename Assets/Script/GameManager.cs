@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
        
     }
-    void FixedUpdate()
+    void Update()
     {
         // Check for input or events to trigger the different functionalities
 
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     
     public void ResumeGame()
     {
-        Time.timeScale = 0f; // Set time scale to normal (unpause)
+        Time.timeScale = 1f; // Set time scale to normal (unpause)
         isGamePaused = false;
         SceneManager.LoadScene("Scene");
 
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
-        Time.timeScale = 1f; // Set time scale to 0 (pause)
+        Time.timeScale = 0f; // Set time scale to 0 (pause)
         isGamePaused = true;
         
     }
