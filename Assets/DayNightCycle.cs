@@ -4,26 +4,36 @@ using UnityEngine;
 
 public class DayNightCycle : MonoBehaviour
 {
-    [SerializeField] private Light sun;
-    [SerializeField] private Material skyboxMaterial;
+    [SerializeField] private Renderer skyRenderer;
+    [SerializeField] private Texture[] dayTextures;
+    [SerializeField] private Texture[] nightTextures;
     [SerializeField] private float dayDuration = 1200f; // in seconds
 
     private void Update()
     {
         float timeOfDay = Mathf.Repeat(Time.time / dayDuration, 1f);
-        UpdateSun(timeOfDay);
-        UpdateSkybox(timeOfDay);
+        UpdateSky(timeOfDay);
     }
 
-    private void UpdateSun(float timeOfDay)
+    private void UpdateSky(float timeOfDay)
     {
-        sun.transform.localRotation = Quaternion.Euler(timeOfDay * 360f, 45f, 0f);
+        int textureIndex = Mathf.FloorToInt(timeOfDay * dayTextures.Length);
+
+        if (IsDaytime(timeOfDay))
+        {
+            skyRenderer.material.mainTexture = dayTextures[textureIndex];
+            RenderSettings.skybox = skyRenderer.material; // Set the skybox material for day
+        }
+        else
+        {
+            skyRenderer.material.mainTexture = nightTextures[textureIndex];
+            RenderSettings.skybox = skyRenderer.material; // Set the skybox material for night
+        }
     }
 
-    private void UpdateSkybox(float timeOfDay)
+    private bool IsDaytime(float timeOfDay)
     {
-        // Adjust skybox properties based on time of day
-        Color skyColor = Color.Lerp(Color.black, Color.blue, timeOfDay);
-        skyboxMaterial.SetColor("_SkyTint", skyColor);
+        // Adjust the threshold to determine when it's daytime or nighttime
+        return timeOfDay < 0.5f;
     }
 }
