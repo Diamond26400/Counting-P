@@ -23,7 +23,7 @@ public class DayNightCycle : MonoBehaviour
     private void UpdateSkybox(float timeOfDay)
     {
         // Adjust skybox properties based on time of day
-        Color skyColor = Color.Lerp(Color.black, Color.blue, timeOfDay);
+        Color skyColor = Color.Lerp(Color.gray, Color.blue, timeOfDay);
         skyboxMaterial.SetColor("_SkyTint", skyColor);
 
         // Debug information
