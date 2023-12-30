@@ -6,14 +6,12 @@ public class ItemController : MonoBehaviour
 {
     public Item item;
     // Start is called before the first frame update
-    void Start()
+    void Pickup()
     {
-        
+        InventoryManager.Instance.Add(item);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnMouseDown()
     {
-        
+        Pickup();
     }
 }
