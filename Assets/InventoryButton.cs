@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryButton : MonoBehaviour
 {
-    public GameObject Flowers_01;
+    public GameObject decouration;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +13,6 @@ public class InventoryButton : MonoBehaviour
 
     public void spawnObject()
     {
-        Instantiate(Flowers_01, transform.position, Quaternion.identity);
+        Instantiate(decouration, transform.position, Quaternion.identity);
     }
 }
