@@ -8,8 +8,8 @@ using static UnityEditor.Progress;
 
 public class GardenInputController : MonoBehaviour
 {
-    private Camera mainCamera;
-
+    [SerializeField] Camera mainCamera;
+    [SerializeField] ItemDragAndDrop itemDragAndDrop;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +61,8 @@ public class GardenInputController : MonoBehaviour
         void OnInputHold(Vector3 position)
         {
             // Implement logic for holding the input (e.g., dragging and placing items in the garden)
+           
+
             Debug.Log("Input Hold at: " + position);
         }
         void OnInputEnd(Vector3 position)

@@ -10331,6 +10331,7 @@ Transform:
   - {fileID: 1497065156}
   - {fileID: 368334653}
   - {fileID: 319157991}
+  - {fileID: 1093910472}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &923195532
@@ -12473,6 +12474,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086810175}
   m_CullTransparentMesh: 1
+--- !u!1 &1093910471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1093910472}
+  - component: {fileID: 1093910473}
+  m_Layer: 0
+  m_Name: Control Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1093910472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093910471}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 901745877}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1093910473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093910471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 504adeb6063f26f4782e80eb70af3000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1648811352}
 --- !u!1 &1099497497
 GameObject:
   m_ObjectHideFlags: 0
@@ -17873,13 +17919,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648811350}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2109867, y: -0.6301759, z: 0.18356672, w: 0.72433853}
-  m_LocalPosition: {x: 36.1, y: 9.9, z: 10.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.24184473, y: 0.66446304, z: -0.24184473, w: -0.66446304}
+  m_LocalPosition: {x: 40, y: 10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1272796595}
-  m_LocalEulerAnglesHint: {x: 32.48, y: 277.954, z: 0.001}
+  m_LocalEulerAnglesHint: {x: 40, y: 270, z: 0}
 --- !u!45 &1648811354
 Skybox:
   m_ObjectHideFlags: 0

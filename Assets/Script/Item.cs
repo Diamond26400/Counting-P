@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-[CreateAssetMenu (fileName = "New Item", menuName = "Item/Create New Item")]
+[CreateAssetMenu(fileName = "New Item", menuName = "Item/Create New Item")]
 
 public class Item : ScriptableObject
 {
@@ -15,6 +15,6 @@ public class Item : ScriptableObject
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
