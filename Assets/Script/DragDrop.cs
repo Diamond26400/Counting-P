@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class DragDrop : MonoBehaviour , IBeginDragHandler, IEndDragHandler, IDragHandler,IPointerDownHandler
 {
 
-    private Canvas canvas;
+    public Canvas canvas;
     private RectTransform rectTransform;
     // Start is called before the first frame update
     void Awake()
