@@ -7,7 +7,11 @@ public class ItemDragAndDrop : MonoBehaviour
 {
     private bool isDragging = false;
     private Vector3 offset;
-
+    
+    private void Start()
+    {
+      
+    }
     void Update()
     {
         if (isDragging)
@@ -18,14 +22,16 @@ public class ItemDragAndDrop : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         // Record the offset between the object's position and the input position
         offset = transform.position - GetInputPosition();
         isDragging = true;
-    }
 
-    private void OnMouseDrag()
+    }
+    
+
+    public void OnMouseDrag()
     {
         // Continue dragging while the mouse is held down
         Vector3 newPosition = GetInputPosition() + offset;
