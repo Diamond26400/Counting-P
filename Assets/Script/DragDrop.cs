@@ -4,55 +4,39 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.EventSystems;
 
-public class DragDrop : MonoBehaviour , IBeginDragHandler, IEndDragHandler, IDragHandler,IPointerDownHandler
+public class DragDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
 
     private Canvas canvas;
     private RectTransform rectTransform;
-    // Start is called before the first frame update
-    void Awake()
+    private CanvasGroup canvasGroup;
+    public InventoryManager inventoryManager;
+
+    private void Awake()
     {
+        canvas = GetComponentInParent<Canvas>();
         rectTransform = GetComponent<RectTransform>();
-    }
-
-    // Update is called once per frame
-    void onBegindrag(PointerEventData eventData)
-    {
-        Debug.Log("onBegindrag");
-    }
-    void onEnddrag(PointerEventData eventData)
-    {
-        Debug.Log("onEnddrag");
-    }
-    void pointerDown(PointerEventData eventData)
-    {
-        Debug.Log("pointerDown");
-    }
-    public void onDrop(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-
-    }
-
-   
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
+        canvasGroup = GetComponent<CanvasGroup>();
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        canvasGroup.alpha = 0.6f;
+        canvasGroup.blocksRaycasts = false;
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        canvasGroup.alpha = 1f;
+        canvasGroup.blocksRaycasts = true;
+        inventoryManager.SpawnItem();
     }
 }
+
+
+
