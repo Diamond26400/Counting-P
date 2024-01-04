@@ -6,6 +6,8 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
     public List<Item> items = new List<Item>();
+    public GameObject itemPrefab; // Reference to the item prefab
+    public Transform inventoryPanel; // Reference to the inventory panel
 
 
     // Start is called before the first frame update
@@ -15,7 +17,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     // Update is called once per frame
-   public  void Add(Item item)
+    public void Add(Item item)
     {
         items.Add(item);
     }
@@ -23,4 +25,14 @@ public class InventoryManager : MonoBehaviour
     {
         items.Remove(item);
     }
+    public void SpawnItem()
+    {
+        Instantiate(itemPrefab, inventoryPanel);
+    }
+
 }
+
+
+
+
+

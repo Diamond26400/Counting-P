@@ -12519,6 +12519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1648811352}
+  itemDragAndDrop: {fileID: 0}
 --- !u!1 &1099497497
 GameObject:
   m_ObjectHideFlags: 0
@@ -12612,6 +12613,7 @@ GameObject:
   - component: {fileID: 1102922150}
   - component: {fileID: 1102922153}
   - component: {fileID: 1102922152}
+  - component: {fileID: 1102922154}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -12734,6 +12736,18 @@ MonoBehaviour:
   m_Spacing: {x: 24.3, y: 80.2}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1102922154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102922148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cff7a6b171b32b4b8562feaffab74e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1103924039
 PrefabInstance:
   m_ObjectHideFlags: 0
