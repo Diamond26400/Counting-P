@@ -35,6 +35,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         inventoryManager.SpawnItem();
+
+
+        // Notify the InventoryManager to spawn the selected item
+        inventoryManager.SpawnItem(transform.position);
     }
 }
 
