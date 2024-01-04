@@ -35,7 +35,18 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.left * mouseY * rotationSpeed);
 
         // Rotate the entire player horizontally (yaw)
-        transform.parent.Rotate(Vector3.up * mouseX * rotationSpeed);
+        transform.Rotate(Vector3.up * mouseX * rotationSpeed);
+
+        if (transform.rotation.eulerAngles.x + mouseY < 90f || transform.rotation.eulerAngles.x + mouseY > 270f)
+        {
+            transform.Rotate(Vector3.left * mouseY * rotationSpeed);
+        }
+
+        // Rotate the entire player horizontally (yaw)
+        if (transform.parent != null)
+        {
+            transform.parent.Rotate(Vector3.up * mouseX * rotationSpeed);
+        }
     }
     public Vector3 GetSpawnPoint()
     {
