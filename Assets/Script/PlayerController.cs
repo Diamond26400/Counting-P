@@ -33,12 +33,30 @@ public class PlayerController : MonoBehaviour
         transform.Translate(movement * speed * Time.deltaTime);
 
         //rotate camera on the x-axis
-        float W = Input.GetKey(KeyCode.R) ? rotationSpeed *Input.GetAxis("Vertical")* Time.deltaTime : 0f;
-        float S = Input.GetKey(KeyCode.F) ? rotationSpeed  * -Input.GetAxis("Vertical") * Time.deltaTime : 0f;
+        float W = Input.GetKey(KeyCode.W) ? rotationSpeed *Input.GetAxis("Vertical")* Time.deltaTime : 0f;
+        float S = Input.GetKey(KeyCode.S) ? rotationSpeed  * -Input.GetAxis("Vertical") * Time.deltaTime : 0f;
 
         Xrotation += W;
         Yrotation += S;
         transform.Rotate(Vector3.right, W + S);
+
+        float CurrentPosition = transform.eulerAngles.y;
+         float newRotation = CurrentPosition;
+         if (Input.GetKey(KeyCode.A))
+         {
+            newRotation -= rotationSpeed * Time.deltaTime;
+         }
+         else if (Input.GetKey(KeyCode.D))
+         {
+           newRotation += rotationSpeed * Time.deltaTime;
+
+         }
+
+
+        transform.rotation = Quaternion.Euler(0,newRotation,0);
+
+
+
       //transform.localRotation = Quaternion.Euler(Xrotation, Yrotation, 0f);
        // transform.Rotate (Vector3.right , W * rotationSpeed *Time.deltaTime);
         Vector3 GetSpawnPoint()
