@@ -5109,7 +5109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 448373394}
   spawnDistance: 2
-  horizontalcomponent: 0
+  horizontalComponent: 0
   verticalComponent: 0
   speed: 5
   rotationSpeed: 5
