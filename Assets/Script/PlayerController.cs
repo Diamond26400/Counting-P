@@ -34,12 +34,12 @@ public class PlayerController : MonoBehaviour
 
         //rotate camera on the x-axis
         float W = Input.GetKey(KeyCode.R) ? rotationSpeed *Input.GetAxis("Vertical")* Time.deltaTime : 0f;
-        float S = Input.GetKey(KeyCode.F) ? rotationSpeed  * Input.GetAxis("Vertical") * Time.deltaTime : 0f;
+        float S = Input.GetKey(KeyCode.F) ? rotationSpeed  * -Input.GetAxis("Vertical") * Time.deltaTime : 0f;
 
         Xrotation += W;
         Yrotation += S;
         transform.Rotate(Vector3.right, W + S);
-      transform.localRotation = Quaternion.Euler(Xrotation, Yrotation, 0f);
+      //transform.localRotation = Quaternion.Euler(Xrotation, Yrotation, 0f);
        // transform.Rotate (Vector3.right , W * rotationSpeed *Time.deltaTime);
         Vector3 GetSpawnPoint()
         {
