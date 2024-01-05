@@ -1,24 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public Camera playerCamera; // Reference to the player's camera
 
-    // Adjust the offset to determine the spawn position in front of the camera
-    public float spawnDistance = 2f;
-
+    public float spawnDistance = 2;
     public float horizontalcomponent;
     public float verticalComponent;
     [SerializeField] float speed = 5.0f;
     [SerializeField] float rotationSpeed = 5.0f;
-    [SerializeField] float maxLookUp = 80f; // Maximum allowed look up angle
-    [SerializeField] float maxLookDown = 80f; // Maximum allowed look down angle
+    public Transform Camera;
 
+    float  Yrotation = 200f;
+    float Xrotation  = 200f;
     private void Start()
     {
-        // Remove Update() call from Start() as Update is automatically called each frame.
+
     }
 
     public void Update()
@@ -26,50 +27,30 @@ public class PlayerController : MonoBehaviour
         horizontalcomponent = Input.GetAxis("Horizontal");
         verticalComponent = Input.GetAxis("Vertical");
 
+       
         Vector3 movement = new Vector3(horizontalcomponent, 0f, verticalComponent);
         movement.Normalize();
         transform.Translate(movement * speed * Time.deltaTime);
 
-        // Rotate up (pitch) when W is held down
-        if (Input.GetKey(KeyCode.W))
+        //rotate camera on the x-axis
+        float W = Input.GetKey(KeyCode.R) ? rotationSpeed *Input.GetAxis("Vertical")* Time.deltaTime : 0f;
+        float S = Input.GetKey(KeyCode.F) ? rotationSpeed  * Input.GetAxis("Vertical") * Time.deltaTime : 0f;
+
+        Xrotation += W;
+        Yrotation += S;
+        transform.Rotate(Vector3.right, W + S);
+      transform.localRotation = Quaternion.Euler(Xrotation, Yrotation, 0f);
+       // transform.Rotate (Vector3.right , W * rotationSpeed *Time.deltaTime);
+        Vector3 GetSpawnPoint()
         {
-            RotateCamera(-rotationSpeed);
+            // Calculate the spawn point in front of the camera
+            Vector3 spawnPoint = playerCamera.transform.position + playerCamera.transform.forward * spawnDistance;
+
+            // Adjust the spawn point to be at the same height as the camera
+            spawnPoint.y = playerCamera.transform.position.y;
+
+            return spawnPoint;
         }
-
-        // Rotate down (pitch) when S is held down
-        if (Input.GetKey(KeyCode.S))
-        {
-            RotateCamera(rotationSpeed);
-        }
-
-        // Get mouse input for rotation
-        // float mouseX = Input.GetAxis("Mouse X");
-        // float mouseY = Input.GetAxis("Mouse Y");
-
-        // Rotate the camera vertically (pitch)
-        // RotateCamera(mouseY * rotationSpeed);
-
-        // Rotate the entire player horizontally (yaw)
-        // transform.Rotate(Vector3.up * mouseX * rotationSpeed);
-    }
-
-    private void RotateCamera(float amount)
-    {
-        // Rotate the camera's local rotation around the x-axis (pitch)
-        float newRotationX = playerCamera.transform.localRotation.eulerAngles.x + amount * Time.deltaTime;
-        newRotationX = Mathf.Clamp(newRotationX, -maxLookUp, maxLookDown);
-        playerCamera.transform.localRotation = Quaternion.Euler(newRotationX, 0f, 0f);
-    }
-
-    public Vector3 GetSpawnPoint()
-    {
-        // Calculate the spawn point in front of the camera
-        Vector3 spawnPoint = playerCamera.transform.position + playerCamera.transform.forward * spawnDistance;
-
-        // Adjust the spawn point to be at the same height as the camera
-        spawnPoint.y = playerCamera.transform.position.y;
-
-        return spawnPoint;
     }
 }
-
+   
