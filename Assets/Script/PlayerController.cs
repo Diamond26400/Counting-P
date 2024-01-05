@@ -32,13 +32,16 @@ public class PlayerController : MonoBehaviour
         movement.Normalize();
         transform.Translate(movement * speed * Time.deltaTime);
 
+
         //rotate camera on the x-axis
-        float W = Input.GetKey(KeyCode.W) ? rotationSpeed *Input.GetAxis("Vertical")* Time.deltaTime : 0f;
-        float S = Input.GetKey(KeyCode.S) ? rotationSpeed  * -Input.GetAxis("Vertical") * Time.deltaTime : 0f;
+          float Current = transform.eulerAngles.x;
+
+        float W = Input.GetKey(KeyCode.W) ? rotationSpeed *Input.GetAxis("Vertical")* Current*Time.deltaTime : 0f;
+        float S = Input.GetKey(KeyCode.S) ? rotationSpeed  * -Input.GetAxis("Vertical") *Current * Time.deltaTime : 0f;
 
         Xrotation += W;
         Yrotation += S;
-        transform.Rotate(Vector3.right, W + S);
+        transform.Rotate(Vector3.right, W + S) ;
 
         float CurrentPosition = transform.eulerAngles.y;
          float newRotation = CurrentPosition;
@@ -53,7 +56,7 @@ public class PlayerController : MonoBehaviour
          }
 
 
-        transform.rotation = Quaternion.Euler(0,newRotation,0);
+        transform.rotation = Quaternion.Euler(Current,newRotation,0);
 
 
 
