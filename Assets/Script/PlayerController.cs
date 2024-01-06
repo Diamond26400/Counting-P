@@ -1,68 +1,45 @@
-using System;
 using System.Collections;
+
 using System.Collections.Generic;
-using UnityEditor.U2D;
+
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public Camera playerCamera; // Reference to the player's camera
 
-    public float spawnDistance = 2;
-    public float horizontalComponent;
-    public float verticalComponent;
-    [SerializeField] float speed = 5.0f;
-    [SerializeField] float rotationSpeed = 5.0f;
-    
-    float yawAngle = 0f;
-float pitchAngle = 0f;
 
-    float Yrotation = 200f;
-    float Xrotation = 200f;
+    [SerializeField] float rotationSpeed = 5.0f;
 
     void Update()
     {
-        // basic movement
-        horizontalComponent = Input.GetAxis("Horizontal");
-        verticalComponent = Input.GetAxis("Vertical");
+        // Get the horizontal and vertical input axes
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(horizontalComponent, 0f, verticalComponent);
-        movement.Normalize();
-        transform.Translate(movement * speed * Time.deltaTime);
+        // Calculate the rotation angles
+        float yawAngle = horizontalInput * rotationSpeed * Time.deltaTime;
+        float pitchAngle = verticalInput * rotationSpeed * Time.deltaTime;
 
-// Get the horizontal and vertical input axes
-    float horizontalInput = Input.GetAxis("Horizontal");
-    float verticalInput = Input.GetAxis("Vertical");
+        // Apply rotation to the camera's transform based on keys
+        if (Input.GetKey(KeyCode.A))
+        {
+            playerCamera.transform.Rotate(Vector3.up, -yawAngle, Space.Self);  // Yaw rotation left
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            playerCamera.transform.Rotate(Vector3.up, yawAngle, Space.Self);   // Yaw rotation right
+        }
 
+        if (Input.GetKey(KeyCode.W))
+        {
+            playerCamera.transform.Rotate(Vector3.left, pitchAngle, Space.Self);  // Pitch rotation up
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            playerCamera.transform.Rotate(Vector3.left, -pitchAngle, Space.Self); // Pitch rotation down
+        }
+    }
 
-//keys
-if(Input.GetKey(KeyCode.W)){
-
-    float yawAngle = horizontalInput * speed * Time.deltaTime;
-
-}
-else if (Input.GetKey(KeyCode.S)){
-    float yawAngle = -horizontalInput * speed * Time.deltaTime;
     
 }
-    // Calculate the rotation angles
-  if(Input.GetKey(KeyCode.A))
-  {
-    float pitchAngle = verticalInput * speed * Time.deltaTime;
-    
-  }
-  else if(Input.GetKey(KeyCode.D))
-  {
-     float pitchAngle = -verticalInput * speed * Time.deltaTime;
-
-         
-  }
- 
-   
-
-
-    // Rotate the camera around its own axis
-
-     }
-}
-   
