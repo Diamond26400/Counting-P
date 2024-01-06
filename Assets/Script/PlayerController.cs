@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // basic movement
         horizontalComponent = Input.GetAxis("Horizontal");
         verticalComponent = Input.GetAxis("Vertical");
 
@@ -26,34 +27,20 @@ public class PlayerController : MonoBehaviour
         movement.Normalize();
         transform.Translate(movement * speed * Time.deltaTime);
 
-        // Rotate camera on the x-axis
-        float W = Input.GetKey(KeyCode.W) ? rotationSpeed * Input.GetAxis("Vertical") * Time.deltaTime : 0f;
-        float S = Input.GetKey(KeyCode.S) ? rotationSpeed * -Input.GetAxis("Vertical") * Time.deltaTime : 0f;
 
-        Xrotation += W;
-        Yrotation += S;
-        transform.Rotate(Vector3.right, W + S);
+ void Update()
+{{{{
+    // Get the horizontal and vertical input axes
+    float horizontalInput = Input.GetAxis("Horizontal");
+    float verticalInput = Input.GetAxis("Vertical");
 
-        // Rotate camera around the y-axis
-        float currentRotation = transform.eulerAngles.y;
-        float newRotation = currentRotation;
+    // Calculate the rotation angles
+    float yawAngle = horizontalInput * speed * Time.deltaTime;
+    float pitchAngle = verticalInput * speed * Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            newRotation -= rotationSpeed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            newRotation += rotationSpeed * Time.deltaTime;
-        }
-
-        transform.rotation = Quaternion.Euler(0, newRotation, 0);
-
-        // Calculate the spawn point in front of the camera
-        Vector3 spawnPoint = playerCamera.transform.position + playerCamera.transform.forward * spawnDistance;
-
-        // Adjust the spawn point to be at the same height as the camera
-        spawnPoint.y = playerCamera.transform.position.y;
+    // Rotate the camera around its own axis
+    transform.Rotate(-pitchAngle, yawAngle, 0f);
+}}}}
     }
 }
    
