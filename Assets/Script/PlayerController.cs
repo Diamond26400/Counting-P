@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            playerCamera.transform.Rotate(Vector3.up, yawAngle, Space.Self);   // Yaw rotation right
+            playerCamera.transform.Rotate(Vector3.down, yawAngle, Space.Self);   // Yaw rotation right
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            playerCamera.transform.Rotate(Vector3.left, -pitchAngle, Space.Self); // Pitch rotation down
+            playerCamera.transform.Rotate(Vector3.right, -pitchAngle, Space.Self); // Pitch rotation down
         }
     }
 
