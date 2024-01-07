@@ -22,11 +22,11 @@ public class PlayerController : MonoBehaviour
         float pitchAngle = verticalInput * rotationSpeed * Time.deltaTime;
 
         // Apply rotation to the camera's transform based on keys
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.D))
         {
             playerCamera.transform.Rotate(Vector3.up, -yawAngle, Space.Self);  // Yaw rotation left
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.A))
         {
             playerCamera.transform.Rotate(Vector3.down, yawAngle, Space.Self);   // Yaw rotation right
         }
