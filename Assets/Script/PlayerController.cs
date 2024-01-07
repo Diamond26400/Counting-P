@@ -7,8 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Camera playerCamera; // Reference to the player's camera
-
-
+    
     [SerializeField] float rotationSpeed = 5.0f;
 
     void Update()
@@ -38,7 +37,10 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKey(KeyCode.S))
         {
             playerCamera.transform.Rotate(Vector3.right, -pitchAngle, Space.Self); // Pitch rotation down
+
         }
+
+
     }
 
     
