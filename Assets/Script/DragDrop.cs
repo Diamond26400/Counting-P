@@ -6,9 +6,12 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+     
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         throw new System.NotImplementedException();
+        
     }
 
     public void OnDrag(PointerEventData eventData)
