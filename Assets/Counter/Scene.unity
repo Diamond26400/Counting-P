@@ -6537,11 +6537,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 488086, guid: a2507b8e2681bcc44ad4183e48f4589c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.8
+      value: 37.8
       objectReference: {fileID: 0}
     - target: {fileID: 488086, guid: a2507b8e2681bcc44ad4183e48f4589c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.7
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 488086, guid: a2507b8e2681bcc44ad4183e48f4589c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18279,6 +18279,7 @@ GameObject:
   - component: {fileID: 1648811351}
   - component: {fileID: 1648811355}
   - component: {fileID: 1648811356}
+  - component: {fileID: 1648811357}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -18471,6 +18472,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1648811352}
   rotationSpeed: 5
+--- !u!114 &1648811357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648811350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c240465bc085e64e9912378832d183d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalInput: 0
+  verticalInput: 0
+  speed: 5
 --- !u!224 &1663874457 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1038973336865034798, guid: 734a44728bc4d904f8ae551d0612046b, type: 3}
