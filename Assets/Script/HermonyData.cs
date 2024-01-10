@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using static System.Net.Mime.MediaTypeNames;
+using UnityEngine.UI;
 
 public class HermonyData : MonoBehaviour
 {
     public int harmonyPoints = 0; // Current harmony points
+      public UnityEngine.UI.Text HarmoneyPointsText;// Reference to the UI Text element
+
 
     // Define types of decorations (customize as needed)
     public enum DecorationType
@@ -15,7 +18,7 @@ public class HermonyData : MonoBehaviour
         Statue
         // Add more types as per your game
     }
-
+    
     // Sample rule: Define how certain decoration combinations affect harmony
     public int GetHarmonyContribution(DecorationType decorationType)
     {
@@ -39,14 +42,17 @@ public class HermonyData : MonoBehaviour
         harmonyPoints += contribution;
 
         // Update UI or perform other actions based on harmony points
-        UpdateUI();
+         // Update UI or perform other actions based on harmony points
+           UpdateUI();
     }
 
     // Update UI to display harmony points
     private void UpdateUI()
     {
-        // Implement UI update logic here
-        Debug.Log("Current Harmony Points: " + harmonyPoints);
+        if (HarmoneyPointsText != null)
+        {
+           HarmoneyPointsText.text = "Harmony Points: " + harmonyPoints;
+        }
     }
 }
 
