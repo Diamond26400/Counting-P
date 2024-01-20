@@ -82,5 +82,13 @@ public class HermonyData : MonoBehaviour
             return 0;
       }
     }
+    private void AddHarmonyPoints(int pointsToAdd)
+    {
+        // Add additional logic here if needed
+        harmonyPoints += pointsToAdd;
+
+        // You can perform other actions based on the addition of harmony points
+        Debug.Log("Additional harmony points added: " + pointsToAdd);
+    }
 }
 
