@@ -7,7 +7,7 @@ public class MailManager : MonoBehaviour
 {
     public HermonyData harmonyManager;
     public TextMeshPro messageText;
-     private string[] positiveMessages = { "Lovely garden!", "Beautiful arrangement!", "Harmony at its best!" };
+     private string[] positiveMessages = { "Lovely garden!", "Beautiful arrangement!", "Harmony at its best!" }
     // Start is called before the first frame update
    public void RecieveMessage()
    {
@@ -18,7 +18,7 @@ public class MailManager : MonoBehaviour
         DisplayMessage(message);
 
         // Award additional harmony points
-        harmonyManager.UpdateHarmonyPoints(0);//mistake
+        harmonyManager.AddHarmonyPoints(5);
    }
    private string GetRandomPositiveMessage()
     {

@@ -82,7 +82,7 @@ public class HermonyData : MonoBehaviour
             return 0;
       }
     }
-    private void AddHarmonyPoints(int pointsToAdd)
+    public void AddHarmonyPoints(int pointsToAdd)
     {
         // Add additional logic here if needed
         harmonyPoints += pointsToAdd;
