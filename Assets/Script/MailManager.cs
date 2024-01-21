@@ -7,11 +7,11 @@ public class MailManager : MonoBehaviour
 {
     public HermonyData harmonyManager;
     public TextMeshPro messageText;
-     private string[] positiveMessages = { "Lovely garden!", "Beautiful arrangement!", "Harmony at its best!" }
+     private string[] positiveMessages = { "Lovely garden!", "Beautiful arrangement!", "Harmony at its best!" };
     // Start is called before the first frame update
    public void RecieveMessage()
    {
-        // Get a random positive message
+        // Get a random positive messages
         string message = GetRandomPositiveMessage();
 
         // Display the message in the UI
