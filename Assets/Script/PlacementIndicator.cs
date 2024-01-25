@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlacementIndicator : MonoBehaviour
 {
-  public Transform playerCamera; // Player's camera
+    public Transform playerCamera; // Player's camera
     public LayerMask placementLayer; // Layer for valid placement surfaces
     public float maxDistance = 5f; // Maximum distance for raycasting
 
